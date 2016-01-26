@@ -96,7 +96,8 @@ public abstract class RecyclerViewQuickAdapter<D, B extends ViewDataBinding> ext
         holder.getBinding().getRoot().setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View v) {
-                onItemLongClickListener.onItemLongClick(v, position);
+                if (null != onItemLongClickListener)
+                    onItemLongClickListener.onItemLongClick(v, position);
                 return true;
             }
         });

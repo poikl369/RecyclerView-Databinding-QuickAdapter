@@ -28,7 +28,7 @@ public abstract class ListViewDataBindingQuickAdapter<D, B extends ViewDataBindi
         this.layoutId = layoutId;
     }
 
-    public void clear(){
+    public void clear() {
         this.list.clear();
         this.notifyDataSetChanged();
     }
@@ -49,7 +49,7 @@ public abstract class ListViewDataBindingQuickAdapter<D, B extends ViewDataBindi
         this.notifyDataSetChanged();
     }
 
-    public void removeItem(int position){
+    public void removeItem(int position) {
         this.list.remove(position);
         this.notifyDataSetChanged();
     }
@@ -64,7 +64,7 @@ public abstract class ListViewDataBindingQuickAdapter<D, B extends ViewDataBindi
         return list.get(position);
     }
 
-    public D getItemById(int position){
+    public D getItemById(int position) {
         return list.get(position);
     }
 
@@ -75,7 +75,7 @@ public abstract class ListViewDataBindingQuickAdapter<D, B extends ViewDataBindi
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        if (convertView == null) {
+        if (null == convertView) {
             View view = LayoutInflater.from(context).inflate(layoutId, null);
             B binding = DataBindingUtil.bind(view);
             convertView = binding.getRoot();
